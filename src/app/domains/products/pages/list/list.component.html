@@ -12,8 +12,10 @@
     </ul>
   </div>
   <div class="grid grid-cols-4 gap-4 w-full">
-    <app-product *ngFor="let product of products()"
-    [product]="product"
-    (addToCart)="addToCart($event)"/>
+    @for (product of products(); track product) {
+      <app-product
+        [product]="product"
+        (addToCart)="addToCart($event)"/>
+    }
   </div>
 </div>
